@@ -5,5 +5,5 @@ const apiEndpointWQuery = 'https://api.thecatapi.com/v1/breeds/search?q=' + myAr
 // Make an API request
 request(apiEndpointWQuery, (error, response, body) => {
   const data = JSON.parse(body);
-  console.log(data[0]['description']);
+  console.log(data.length ? data[0]['description'] : 'Breed not found!');
 });
