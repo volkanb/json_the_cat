@@ -1,9 +1,9 @@
 const request = require('request');
+const myArgs = process.argv.slice(2);
+const apiEndpointWQuery = 'https://api.thecatapi.com/v1/breeds/search?q=' + myArgs[0];
 
-const siberianUrl = 'https://api.thecatapi.com/v1/breeds/search?q=Siberian';
-
-// Establish a connection to the url
-request(siberianUrl, (error, response, body) => {
-  // Write the body to specified file
-  console.log(typeof body)
+// Make an API request
+request(apiEndpointWQuery, (error, response, body) => {
+  const data = JSON.parse(body);
+  console.log(data[0]['description']);
 });
