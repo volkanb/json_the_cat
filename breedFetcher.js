@@ -8,6 +8,6 @@ request(apiEndpointWQuery, (error, response, body) => {
     console.log("Request failed!");
   } else {
     const data = JSON.parse(body);
-  console.log(data.length ? data[0]['description'] : 'Breed not found!');
-  }  
+    console.log(data.length ? data[0]['description'] : 'Breed not found!');
+  }
 });
